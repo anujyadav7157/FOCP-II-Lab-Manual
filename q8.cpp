@@ -1,20 +1,18 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main()
-{
-    int n , id;
-    cout<<("Enter no of id's to be entered");
-    cin>>n;
-    for(int i=1;i<=n;i++)
-    {
-        cout<<("Enter id ");
-        cin>>id;
-        if (id%3==0 && id%5==0)
-            cout << "\nFUZZBUZZ";
-        else if (id%5==0)
-            cout << "\nBUZZ";
-        else if (id%3==0)
-            cout << "\nFUZZ";
+int main() {
+    int N;
+    cout << "Enter value of N: ";
+    cin >> N;
+    for (int i = 1; i <= N; i++) {
+        if (i % 3 == 0 && i % 5 == 0)
+            cout << i << " : Buzz Fuzz" << endl;
+        else if (i % 3 == 0)
+            cout << i << " : Buzz" << endl;
+        else if (i % 5 == 0)
+            cout << i << " : Fuzz" << endl;
+        else
+            cout << i << endl;
     }
     return 0;
 }
