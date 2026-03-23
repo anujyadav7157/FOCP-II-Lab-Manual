@@ -1,20 +1,22 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main()
-{
-    int s,n,max;
-    cout<<"Enter no of sales figures";
-    cin>>n;
-    max = s;
-    for(int i=1;i<=n;i++) 
-    {    
-        cout<<"\nEnter sales figures";
-        cin>>s;
+
+int main() {
+    int n, num, max;
+
+    cout << "Enter n: ";
+    cin >> n;
+
+    cout << "Enter numbers:\n";
+    cin >> max;
+
+    for(int i = 2; i <= n; i++) {
+        cin >> num;
+        if(num > max)
+            max = num;
     }
-    if (max < s)
-    {
-        max = s;
-        cout << "Maximum sales figure is " << s;
-    }
+
+    cout << "Largest = " << max;
+
     return 0;
 }
