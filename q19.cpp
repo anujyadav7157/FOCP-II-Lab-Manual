@@ -1,28 +1,20 @@
-#include<iostream>
-#include<cmath>
+#include <iostream>
 using namespace std;
-int main()
-{
-    int num1 , num2 , j;
-    bool f = true;
-    cout<<"enter number 1";
-    cin>>num1;
-    cout<<"enter number 2";
-    cin>>num2;
-    for(int i = num1;i<=num2;i++)
-    {
-        for(int j=2;j<=i/2;j++)
-        {
-            if(i%j==0)
-            {
-                f = false;
+int main() {
+    int start, end, flag;
+    cout << "Enter range: ";
+    cin >> start >> end;
+    for(int i = start; i <= end; i++) {
+        if(i <= 1) continue;
+        flag = 1;
+        for(int j = 2; j <= i/2; j++) {
+            if(i % j == 0) {
+                flag = 0;
                 break;
             }
         }
-        if(f == true)
-            cout<<"\nPRIME "<<i;
-        else
-            cout<<"\nNOT PRIME "<<i;
+        if(flag)
+            cout << i << " ";
     }
-
+    return 0;
 }
