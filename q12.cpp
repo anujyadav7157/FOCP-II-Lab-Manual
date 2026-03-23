@@ -1,19 +1,14 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main()
-{
-    int s1,s2,s3;
-    cout<<"Enter s1";
-    cin>>s1;
-    cout << "Enter s2";
-    cin >> s2;
-    cout << "Enter s3";
-    cin >> s3;
-    if(s1==s2&&s1==s3&&s2==s3)
-        cout<<"Equilateral triangle";
-    else if((s1==s2)||(s2==s3)||(s1==s3))
-        cout<<"Isoceles triangle";
+int main() {
+    int a, b, c;
+    cout << "Enter three sides of triangle: ";
+    cin >> a >> b >> c;
+    if (a == b && b == c)
+        cout << "Equilateral Triangle";
+    else if (a == b || b == c || a == c)
+        cout << "Isosceles Triangle";
     else
-        cout<<"Scalene triangle";
+        cout << "Scalene Triangle";
     return 0;
 }
