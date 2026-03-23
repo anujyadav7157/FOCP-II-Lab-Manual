@@ -1,21 +1,18 @@
-#include<iostream>
-#include<cmath>
+#include <iostream>
 using namespace std;
-int main()
-{
-    int temp , sum = 0 , n,rev = 0,digit;
-    cout<<"Enter number";
-    cin>>n;
-    temp =n;
-    while(temp!=0)
-    {
-        digit = temp%10;
-        rev = rev*10+digit;
-        temp/=10;
+int main() {
+    int n, rev = 0, rem, temp;
+    cout << "Enter ID: ";
+    cin >> n;
+    temp = n;
+    while(n != 0) {
+        rem = n % 10;
+        rev = rev * 10 + rem;
+        n /= 10;
     }
-    if(rev==n)
-        cout<<"PALINDROME";
+    if(temp == rev)
+        cout << "Palindrome";
     else
-        cout<<"NOT A PALINDROME";
+        cout << "Not Palindrome";
     return 0;
 }
