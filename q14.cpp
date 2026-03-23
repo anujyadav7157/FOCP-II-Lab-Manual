@@ -1,48 +1,23 @@
 #include <iostream>
 using namespace std;
+int main() {
+    int choice;
+    float a, b;
+    do {
+        cout << "\n1.Add 2.Subtract 3.Multiply 4.Divide 5.Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
 
-int main()
-{
-    int ch, s, a, m, d, n1, n2;
-
-    do
-    {
-        cout << "Enter 2 numbers to be used for basic arithmetic operations: ";
-        cin >> n1 >> n2;
-
-        cout << "ENter choice \n1) SUBTRACT\n2) ADD\n3) MULTIPLY\n4) DIVISION\n5) EXIT\n";
-        cin >> ch;
-
-        if (ch == 1)
-        {
-            if (n2 > n1)
-            {
-                s = n2 - n1;
-                cout << "Subtraction = " << s;
-            }
-            else if (n1 > n2)
-            {
-                s = n1 - n2;
-                cout << "Subtraction = " << s;
-            }
+        if (choice >= 1 && choice <= 4) {
+            cout << "Enter two numbers: ";
+            cin >> a >> b;
         }
-        if (ch == 2)
-        {
-            a = n1 + n2;
-            cout << "Addition = " << a;
+        switch(choice) {
+            case 1: cout << "Result = " << a + b; break;
+            case 2: cout << "Result = " << a - b; break;
+            case 3: cout << "Result = " << a * b; break;
+            case 4: cout << "Result = " << a / b; break;
         }
-        if (ch == 3)
-        {
-            m = n1 * n2;
-            cout << "Multiplication = " << m;
-        }
-        if (ch == 4)
-        {
-            d = n1 / n2;
-            cout << "Division = " << d;
-        }
-
-    } while (ch != 5);
-
+    } while(choice != 5);
     return 0;
 }
