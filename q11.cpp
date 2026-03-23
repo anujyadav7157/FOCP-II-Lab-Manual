@@ -1,24 +1,18 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main()
-{
-    int e,n,d;
-    cout<<"Total no of entries";
-    cin>>n;
-    for(int i=1;i<=n;i++)
-    {
-        cout<<"Enter your total expense";
-        cin>>e;
-        if(e>=1000)
-        {
-            d = 0.1*e;
-            e = e-d;
-            cout<<"Your order is above than 1000 thus you got 10per discount "<<e;
-        }
-        else
-        {
-            cout<<"No discount for less than 1000 rupee sales"<<e;
-        }
+int main() {
+    int quantity;
+    float price, total, discount = 0;
+    cout << "Enter quantity: ";
+    cin >> quantity;
+    cout << "Enter price per item: ";
+    cin >> price;
+    total = quantity * price;
+    if (quantity > 1000) {
+        discount = total * 0.10;
     }
+    cout << "Total amount = " << total << endl;
+    cout << "Discount = " << discount << endl;
+    cout << "Final amount = " << total - discount << endl;
     return 0;
 }
