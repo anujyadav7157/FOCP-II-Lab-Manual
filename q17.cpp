@@ -1,38 +1,33 @@
-#include<iostream>
+#include <iostream>
 #include <cmath>
 using namespace std;
-int main()
-{
-    int n,temp,sum=0;
-    int psum=0;
-    cout<<"Enter number to check if perfect or armstrong";
-    cin>>n;
-    for(int i=1;i<=n/2;i++)
-    {
-        if(n%i==0)
-            psum+=i;
+int main() {
+    int n, sum = 0, temp, rem, digits = 0;
+    cout << "Enter number: ";
+    cin >> n;
+    for(int i = 1; i < n; i++) {
+        if(n % i == 0)
+            sum += i;
     }
-    if(psum==n)
-        cout<<"\nPERFECT";
+    if(sum == n)
+        cout << "Perfect Number\n";
     else
-        cout<<"\nNOT PERFECT";
-    int digit,digits=0;
-    temp=n;
-    while(temp!=0)
-    {
+        cout << "Not Perfect\n";
+    temp = n;
+    while(temp != 0) {
         digits++;
-        temp/=10;
+        temp /= 10;
     }
     temp = n;
-    while(temp!=0)
-    {
-        digit = temp%10;
-        sum += pow(digit,digits);
-        temp/=10;
+    sum = 0;
+    while(temp != 0) {
+        rem = temp % 10;
+        sum += pow(rem, digits);
+        temp /= 10;
     }
-    if(sum==n)
-        cout<<"\nARMSTRONG";
+    if(sum == n)
+        cout << "Armstrong Number";
     else
-        cout<<"\nNOT ARMSTRONG";
+        cout << "Not Armstrong";
     return 0;
 }
